@@ -3,7 +3,7 @@ public class Vehicle {
     public Vehicle(int InitialAltitude) {
         // initialize the altitude AND previous altitude to initialAltitude
         Altitude = InitialAltitude;
-//        this.PrevAltitude = Altitude;
+        PrevAltitude = Altitude;
     }
 
     int Gravity = 100;
@@ -56,7 +56,7 @@ public class Vehicle {
 
     public int computeDeltaV() {
         // return velocity + gravity - burn amount
-        return Velocity + Gravity - Burn;
+        return (Velocity + Gravity - Burn);
     }
 
     public void adjustForBurn(int burnAmount) {
