@@ -10,9 +10,10 @@ public class BurnDataStream implements BurnStream {
     public BurnDataStream(int[] burns) {
         this.burnArray = burns;
     }
+
     @Override
     public int getNextBurn(DescentEvent status) {
-        if (burnIdx < burnArray.length) {
+        if (burnIdx < burnArray.length-1) {
             burnIdx++;
             System.out.println(burnArray[burnIdx]); /*hack!*/
             return burnArray[burnIdx];

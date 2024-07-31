@@ -61,7 +61,7 @@ public class Simulation {
                 break;
             }
             burnInterval++;
-            if (burnInterval % 9 == 0) {
+            if (burnInterval  % 9== 0) {//%9
                 printString(getHeader());
             }
         }
@@ -74,8 +74,16 @@ public class Simulation {
 
     public static void main(String[] args) {
         // create a new Simulation object with a random starting altitude
+        Vehicle vehicle1 = new Vehicle(9000);
+        Simulation simulation = new Simulation(vehicle1);
+
+
         // create a new BurnInputStream
+        BurnInputStream burnInputStream = new BurnInputStream();
         // pass the new BurnInputStream to the runSimulation method
+
+        OnBoardComputer onBoardComputer = new OnBoardComputer();
+        simulation.runSimulation(onBoardComputer);
     }
 
 }
